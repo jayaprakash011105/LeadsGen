@@ -1,0 +1,42 @@
+[
+  {
+    "title": "TechInnovate Solutions",
+    "website": "https://techinnovate.io",
+    "phone": "+91 9876543210",
+    "address": "Cyber City, Hyderabad",
+    "categoryName": "IT Services",
+    "totalScore": 4.8
+  },
+  {
+    "title": "Green Garden Bistro",
+    "website": "N/A",
+    "phone": "+91 8888877777",
+    "address": "Indiranagar, Bangalore",
+    "categoryName": "Restaurant",
+    "totalScore": 4.2
+  },
+  {
+    "title": "Elite Fitness Center",
+    "website": "http://elitefitness.com",
+    "phone": "040-23456789",
+    "address": "Banjara Hills, Hyderabad",
+    "categoryName": "Gym",
+    "totalScore": 3.5
+  },
+  {
+    "title": "Creative Pixels Studio",
+    "website": "https://cpixels.design",
+    "phone": "+91 7777766666",
+    "address": "Andheri East, Mumbai",
+    "categoryName": "Design Agency",
+    "totalScore": 4.9
+  },
+  {
+    "title": "Local Hardware Mart",
+    "website": "",
+    "phone": "+91 9000010000",
+    "address": "Chandni Chowk, Delhi",
+    "categoryName": "Hardware Store",
+    "totalScore": 3.1
+  }
+]

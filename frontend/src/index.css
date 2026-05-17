@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-primary: #3b82f6;
+    --accent-secondary: #7c3aed;
+    --accent-glow: rgba(59, 130, 246, 0.5);
+    --gradient-primary: linear-gradient(135deg, #3b82f6, #7c3aed);
+    --bg-primary: #08080f;
+  }
+
+  .theme-purple {
+    --accent-primary: #7c3aed;
+    --accent-secondary: #ec4899;
+    --accent-glow: rgba(124, 58, 237, 0.5);
+    --gradient-primary: linear-gradient(135deg, #7c3aed, #ec4899);
+  }
+
+  .theme-green {
+    --accent-primary: #10b981;
+    --accent-secondary: #3b82f6;
+    --accent-glow: rgba(16, 185, 129, 0.5);
+    --gradient-primary: linear-gradient(135deg, #10b981, #3b82f6);
+  }
+
+  * {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #1e1e2e transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #1e1e2e;
+    border-radius: 10px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-glow);
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #f1f5f9;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--accent-glow);
+    color: #f1f5f9;
+  }
+}
+
+@layer components {
+  /* Glass Card */
+  .glass-card {
+    @apply bg-bg-card border border-border rounded-xl backdrop-blur-sm;
+    background: linear-gradient(135deg, rgba(19, 19, 31, 0.9) 0%, rgba(26, 26, 46, 0.8) 100%);
+  }
+
+  /* Cyber Button */
+  .btn-primary {
+    @apply relative px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200;
+    background: var(--gradient-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .btn-primary:active {
+    @apply scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply px-5 py-2.5 rounded-lg font-medium text-sm border border-border text-text-secondary transition-all duration-200;
+    background: rgba(30, 30, 46, 0.5);
+  }
+
+  .btn-secondary:hover {
+    @apply border-accent-cyan text-text-primary;
+    background: rgba(0, 212, 255, 0.05);
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 rounded-lg font-medium text-sm text-text-secondary transition-all duration-200;
+  }
+
+  .btn-ghost:hover {
+    @apply text-text-primary bg-bg-elevated;
+  }
+
+  .btn-danger {
+    @apply px-5 py-2.5 rounded-lg font-medium text-sm transition-all duration-200;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+  }
+
+  .btn-danger:hover {
+    background: rgba(239, 68, 68, 0.25);
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+  }
+
+  /* Input */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg text-sm text-text-primary outline-none transition-all duration-200;
+    background: rgba(19, 19, 31, 0.8);
+    border: 1px solid #1e1e2e;
+  }
+
+  .input-field::placeholder {
+    color: #475569;
+  }
+
+  .input-field:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-cyan {
+    @apply badge;
+    background: var(--accent-glow);
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+  }
+
+  .badge-purple {
+    @apply badge;
+    background: rgba(124, 58, 237, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(124, 58, 237, 0.25);
+  }
+
+  .badge-green {
+    @apply badge;
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+  }
+
+  .badge-yellow {
+    @apply badge;
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+  }
+
+  .badge-red {
+    @apply badge;
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+  }
+
+  .badge-gray {
+    @apply badge;
+    background: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.25);
+  }
+
+  /* Glow text */
+  .text-glow {
+    text-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Skeleton loader */
+  .skeleton {
+    background: linear-gradient(90deg, #13131f 25%, #1a1a2e 50%, #13131f 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  /* Sidebar item */
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer text-text-secondary;
+  }
+
+  .sidebar-item:hover {
+    @apply text-text-primary;
+    background: rgba(30, 30, 46, 0.6);
+  }
+
+  .sidebar-item.active {
+    color: var(--accent-primary);
+    background: var(--accent-glow);
+    border: 1px solid var(--accent-primary);
+    box-shadow: 0 0 10px var(--accent-glow);
+  }
+
+  /* Table */
+  .table-header {
+    @apply text-xs font-semibold uppercase tracking-wider text-text-muted py-3 px-4;
+  }
+
+  .table-row {
+    @apply border-b border-border transition-colors duration-150;
+  }
+
+  .table-row:hover {
+    background: rgba(26, 26, 46, 0.5);
+  }
+
+  .table-cell {
+    @apply py-3.5 px-4 text-sm;
+  }
+
+  /* Status indicator dot */
+  .status-dot {
+    @apply w-2 h-2 rounded-full inline-block;
+  }
+
+  /* Glow line separator */
+  .glow-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}

@@ -1,0 +1,40 @@
+# Dependency directories
+node_modules/
+node_packages/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment files (contains secrets!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env
+backend/.env
+
+# Firebase credentials & secrets
+firebase-credentials.json
+backend/firebase-credentials.json
+*.json.secret
+*.json.creds
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.sln
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Flask/Python files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
