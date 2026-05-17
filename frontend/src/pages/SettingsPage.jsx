@@ -53,6 +53,19 @@ export default function SettingsPage() {
     toast.success('Profile updated successfully!');
   };
 
+  const handleUpdatePassword = () => {
+    if (!password) {
+      toast.error('Please enter a new password.');
+      return;
+    }
+    if (password.length < 6) {
+      toast.error('Password must be at least 6 characters.');
+      return;
+    }
+    toast.success('Password updated successfully!');
+    setPassword('');
+  };
+
   return (
     <div className="space-y-6 animate-fade-in max-w-4xl">
       <div>
@@ -184,7 +197,7 @@ export default function SettingsPage() {
                 <div className="p-4 rounded-lg bg-yellow-500/5 border border-yellow-500/20">
                   <p className="text-xs text-yellow-400">⚠️ Password changes require re-authentication. You'll be logged out after update.</p>
                 </div>
-                <button className="btn-primary flex items-center gap-2">
+                <button onClick={handleUpdatePassword} className="btn-primary flex items-center gap-2">
                   <Shield size={14} />
                   Update Password
                 </button>

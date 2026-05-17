@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { LeadsProvider } from './context/LeadsContext';
@@ -13,6 +14,14 @@ import SettingsPage from './pages/SettingsPage';
 import FilesPage from './pages/FilesPage';
 
 export default function App() {
+  useEffect(() => {
+    const saved = localStorage.getItem('theme');
+    document.body.classList.remove('theme-purple', 'theme-green');
+    if (saved) {
+      document.body.classList.add(saved);
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <AuthProvider>
